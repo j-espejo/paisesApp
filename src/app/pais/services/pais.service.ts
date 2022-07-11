@@ -21,8 +21,8 @@ export class PaisService {
     return this.http.get<Country[]>(url);
   }
 
-  getPaisId(id: string): Observable<Country> {
+  getPaisId(id: string): Observable<Country[]> {
     const url = `${this.apiUrl}/alpha/${id}`;
-    return this.http.get<Country>(url);
+    return this.http.get<Country[]>(url);
   }
 }
