@@ -23,7 +23,29 @@
         <li class="list-group-item">
           <strong>Polación</strong> {{ pais.population | number }}
         </li>
+        <li class="list-group-item">
+          <strong>Código numérico</strong> {{ pais.ccn3 }}
+        </li>
+        <li class="list-group-item">
+          <strong>Código alfa</strong> {{ pais.cca3 }}
+        </li>
       </ul>
     </div>
   </div>
+
+  <h3>Traducciones</h3>
+  <div class="row">
+    <div class="col">
+      <span
+        *ngFor="let t of pais.translations | keyvalue"
+        class="badge bg-primary mr-5"
+      >
+        {{ t.value.common }}
+      </span>
+    </div>
+  </div>
+
+  <!-- <pre>
+    {{ pais | json }}
+  </pre> -->
 </ng-template>
